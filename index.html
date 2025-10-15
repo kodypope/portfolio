@@ -13,6 +13,9 @@
     <header>
       <nav>
         <h1 class="logo">Kody Pope</h1>
+        <button class="nav-toggle" aria-label="Open navigation menu">
+          <span class="hamburger"></span>
+        </button>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
@@ -20,6 +23,14 @@
         </ul>
       </nav>
     </header>
+    <script>
+      // Hamburger menu toggle
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+    </script>
     <div class="bubble"></div>
     <div class="bubble"></div>
     <div class="bubble"></div>

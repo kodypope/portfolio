@@ -118,6 +118,40 @@ nav {
   outline: none;
 }
 
+/* Hamburger menu styles */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 200;
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  display: block;
+  background: var(--off-white);
+  height: 4px;
+  width: 28px;
+  border-radius: 2px;
+  position: absolute;
+  left: 6px;
+  transition: all 0.3s;
+}
+.hamburger {
+  top: 18px;
+}
+.hamburger::before {
+  top: 8px;
+}
+.hamburger::after {
+  top: -8px;
+}
+
 /* Hero Section */
 .hero {
   height: 90vh;
@@ -155,6 +189,7 @@ nav {
 .hero-content span {
   background: var(--gradient-accent);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -296,21 +331,69 @@ footer {
 }
 
 /* Responsive Navigation */
+@media (max-width: 900px) {
+  header {
+    padding: 20px 5%;
+  }
+  .about, .projects, .contact {
+    padding: 60px 5%;
+  }
+}
+
 @media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
   .nav-links {
     display: none;
     flex-direction: column;
     gap: 15px;
-    background: rgba(43, 45, 47, 0.9);
+    background: rgba(43, 45, 47, 0.95);
     position: absolute;
     top: 70px;
-    right: 10%;
+    right: 5%;
     padding: 20px;
     border-radius: 10px;
     backdrop-filter: blur(10px);
+    width: 180px;
+    box-shadow: 0 8px 24px rgba(43,45,47,0.15);
   }
-
   .nav-links.show {
     display: flex;
+  }
+  .hero {
+    height: auto;
+    padding: 60px 0 40px 0;
+  }
+  .hero-content h2 {
+    font-size: 2.1rem;
+  }
+  .about h2, .projects h2, .contact h2 {
+    font-size: 1.5rem;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+  .btn {
+    padding: 10px 16px;
+    font-size: 1rem;
+  }
+  .about, .projects, .contact {
+    padding: 40px 2%;
+  }
+  .project-card {
+    padding: 18px;
+  }
+  .hero-content h2 {
+    font-size: 1.3rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
   }
 }
