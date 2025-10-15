@@ -118,7 +118,7 @@ nav {
   outline: none;
 }
 
-/* Hamburger menu styles */
+/* Hamburger menu styles - improved alignment */
 .nav-toggle {
   display: none;
   background: none;
@@ -129,27 +129,33 @@ nav {
   width: 40px;
   height: 40px;
 }
-.hamburger,
+.hamburger {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 4px;
+  background: var(--off-white);
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s;
+}
 .hamburger::before,
 .hamburger::after {
   content: '';
-  display: block;
-  background: var(--off-white);
-  height: 4px;
-  width: 28px;
-  border-radius: 2px;
   position: absolute;
-  left: 6px;
+  left: 0;
+  width: 28px;
+  height: 4px;
+  background: var(--off-white);
+  border-radius: 2px;
   transition: all 0.3s;
 }
-.hamburger {
-  top: 18px;
-}
 .hamburger::before {
-  top: 8px;
+  top: -10px;
 }
 .hamburger::after {
-  top: -8px;
+  top: 10px;
 }
 
 /* Hero Section */
